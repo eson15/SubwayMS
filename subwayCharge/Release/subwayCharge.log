@@ -1,0 +1,47 @@
+﻿生成启动时间为 2017/1/11 22:36:43。
+     1>项目“C:\Users\Ni Shengwu\Desktop\07-D3D4【实战】演练和实战工程\project\subwayCharge_student\subwayCharge\subwayCharge.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program FilesMicrosoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\subwayCharge /IsubwayCard /IsubwayCommand /IsubwayCommon /IsubwayControl /IsubwayGlobal /IsubwayLine /IsubwayPrice /IsubwaySocket /IsubwayError /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt subwayCommand\subwayCmdProc\src\subwaySingleTicketProc.cpp
+         subwaySingleTicketProc.cpp
+       Link:
+         D:\Program FilesMicrosoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ni Shengwu\Desktop\07-D3D4【实战】演练和实战工程\project\subwayCharge_student\Release\subwayCharge.exe" /INCREMENTAL:NO /NOLOGO ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Ni Shengwu\Desktop\07-D3D4【实战】演练和实战工程\project\subwayCharge_student\Release\subwayCharge.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ni Shengwu\Desktop\07-D3D4【实战】演练和实战工程\project\subwayCharge_student\Release\subwayCharge.lib" /MACHINE:X86 /SAFESEH Release\stdafx.obj
+         Release\subwayCard.obj
+         Release\subwayCharge.obj
+         Release\cmdCreateCard.obj
+         Release\cmdDeductProc.obj
+         Release\cmdDestroyCard.obj
+         Release\cmdFillCharge.obj
+         Release\cmdQueryHistory.obj
+         Release\cmdQueryLine.obj
+         Release\cmdReset.obj
+         Release\cmdSingleTicket.obj
+         Release\subwayCmdParse.obj
+         Release\subwayCreateCardProc.obj
+         Release\subwayDeductProc.obj
+         Release\subwayFillChargeProc.obj
+         Release\subwayQueryHistoryProc.obj
+         Release\subwayQueryLineProc.obj
+         Release\subwayResetProc.obj
+         Release\subwaySingleTicketProc.obj
+         Release\subwayCommonSplit.obj
+         Release\subwayCmdProc.obj
+         Release\subwayOutput.obj
+         Release\subwayError.obj
+         Release\subwayline.obj
+         Release\basePrice.obj
+         Release\deductPrice.obj
+         Release\subwaySocket.obj
+         Release\subwaycard_test.obj
+         Release\subwayline_test.obj
+         Release\subwayprice_test.obj
+         正在生成代码
+         1 of 1229 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         已完成代码的生成
+         subwayCharge.vcxproj -> C:\Users\Ni Shengwu\Desktop\07-D3D4【实战】演练和实战工程\project\subwayCharge_student\Release\subwayCharge.exe
+     1>已完成生成项目“C:\Users\Ni Shengwu\Desktop\07-D3D4【实战】演练和实战工程\project\subwayCharge_student\subwayCharge\subwayCharge.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:02.80

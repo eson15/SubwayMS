@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCard\subwayCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommon\list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommon\subwayCommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayGlobal\subwayGlobalDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayGlobal\subwayMacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayLine\subwayline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayPrice\include\basePrice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayPrice\include\deductPrice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayPrice\subwayPrice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwaySocket\subwaySocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayError\subwayError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdCreateCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdDeductProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdDestroyCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdFillCharge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdGlobal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdQueryHistory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdQueryLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdReset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdSingleTicket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayCreateCardProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayDeductProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayFillChargeProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayQueryHistoryProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayQueryLineProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayResetProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwaySingleTicketProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdParse\subwayCmdParse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCmdProc\subwayCmdProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayOutput\subwayOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subwayCommand\subwayCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCharge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCard\subwayCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommon\subwayCommonSplit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayLine\subwayline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayPrice\src\basePrice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayPrice\src\deductPrice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayTestcase\subwayline_test\subwayline_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwaySocket\subwaySocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayError\subwayError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayTestcase\subwaycard_test\subwaycard_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayTestcase\subwayprice_test\subwayprice_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdCreateCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdDeductProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdDestroyCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdFillCharge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdQueryHistory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdQueryLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdReset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdSingleTicket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayCreateCardProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayDeductProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayFillChargeProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayQueryHistoryProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayQueryLineProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayResetProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwaySingleTicketProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdParse\subwayCmdParse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayCmdProc\subwayCmdProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subwayCommand\subwayOutput\subwayOutput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

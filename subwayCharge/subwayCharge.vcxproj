@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LLT|Win32">
+      <Configuration>LLT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{590C6F80-D780-4296-ADDC-BA9948A5A1F5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>subwayCharge</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='LLT|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\subwayCharge;subwayCard;subwayCommand;subwayCommon;subwayControl;subwayGlobal;subwayLine;subwayPrice;subwaySocket;subwayError;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\subwayCharge;subwayCard;subwayCommand;subwayCommon;subwayControl;subwayGlobal;subwayLine;subwayPrice;subwaySocket;subwayError;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LLT|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>subwayTestcase;..\..\UT_tools\mockcpp\include;..\..\UT_tools\googletest1.8.0\include;..\subwayCharge;subwayCard;subwayCommand;subwayCommon;subwayControl;subwayGlobal;subwayLine;subwayPrice;subwaySocket;subwayError;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_SUBWAY_LLT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\UT_tools\googletest1.8.0\lib;..\..\UT_tools\mockcpp\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtestd.lib;mockcpp.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="subwayCard\subwayCard.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdCreateCard.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdDeductProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdDestroyCard.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdFillCharge.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdGlobal.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdQueryHistory.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdQueryLine.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdReset.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\include\cmdSingleTicket.h" />
+    <ClInclude Include="subwayCommand\subwayCmdParse\subwayCmdParse.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayCreateCardProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayDeductProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayFillChargeProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayQueryHistoryProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayQueryLineProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwayResetProc.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\include\subwaySingleTicketProc.h" />
+    <ClInclude Include="subwayCommand\subwayCommand.h" />
+    <ClInclude Include="subwayCommon\list.h" />
+    <ClInclude Include="subwayCommon\subwayCommon.h" />
+    <ClInclude Include="subwayCommand\subwayCmdProc\subwayCmdProc.h" />
+    <ClInclude Include="subwayCommand\subwayOutput\subwayOutput.h" />
+    <ClInclude Include="subwayError\subwayError.h" />
+    <ClInclude Include="subwayGlobal\subwayGlobalDef.h" />
+    <ClInclude Include="subwayGlobal\subwayMacro.h" />
+    <ClInclude Include="subwayLine\subwayline.h" />
+    <ClInclude Include="subwayPrice\include\basePrice.h" />
+    <ClInclude Include="subwayPrice\include\deductPrice.h" />
+    <ClInclude Include="subwayPrice\subwayPrice.h" />
+    <ClInclude Include="subwaySocket\subwaySocket.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="subwayCard\subwayCard.cpp" />
+    <ClCompile Include="subwayCharge.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdCreateCard.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdDeductProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdDestroyCard.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdFillCharge.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdQueryHistory.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdQueryLine.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdReset.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\src\cmdSingleTicket.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdParse\subwayCmdParse.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayCreateCardProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayDeductProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayFillChargeProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayQueryHistoryProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayQueryLineProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwayResetProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\src\subwaySingleTicketProc.cpp" />
+    <ClCompile Include="subwayCommon\subwayCommonSplit.cpp" />
+    <ClCompile Include="subwayCommand\subwayCmdProc\subwayCmdProc.cpp" />
+    <ClCompile Include="subwayCommand\subwayOutput\subwayOutput.cpp" />
+    <ClCompile Include="subwayError\subwayError.cpp" />
+    <ClCompile Include="subwayLine\subwayline.cpp" />
+    <ClCompile Include="subwayPrice\src\basePrice.cpp" />
+    <ClCompile Include="subwayPrice\src\deductPrice.cpp" />
+    <ClCompile Include="subwaySocket\subwaySocket.cpp" />
+    <ClCompile Include="subwayTestcase\subwaycard_test\subwaycard_test.cpp" />
+    <ClCompile Include="subwayTestcase\subwayline_test\subwayline_test.cpp" />
+    <ClCompile Include="subwayTestcase\subwayprice_test\subwayprice_test.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

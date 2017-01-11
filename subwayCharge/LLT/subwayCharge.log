@@ -1,0 +1,41 @@
+﻿  stdafx.cpp
+  subwayCard.cpp
+  subwayCharge.cpp
+  cmdCreateCard.cpp
+  cmdDeductProc.cpp
+  cmdDestroyCard.cpp
+  cmdFillCharge.cpp
+  cmdQueryHistory.cpp
+  cmdQueryLine.cpp
+  cmdReset.cpp
+  cmdSingleTicket.cpp
+  subwayCmdParse.cpp
+  subwayCreateCardProc.cpp
+  subwayDeductProc.cpp
+  subwayFillChargeProc.cpp
+  subwayQueryHistoryProc.cpp
+  subwayQueryLineProc.cpp
+  subwayResetProc.cpp
+  subwaySingleTicketProc.cpp
+  subwayCommonSplit.cpp
+  Generating Code...
+  Compiling...
+  subwayCmdProc.cpp
+  subwayOutput.cpp
+  subwayError.cpp
+  subwayline.cpp
+  basePrice.cpp
+  deductPrice.cpp
+  subwaySocket.cpp
+  subwaycard_test.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  using native typeof
+  subwayline_test.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  using native typeof
+  subwayprice_test.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  using native typeof
+  Generating Code...
+     Creating library D:\01_work\2016Q34\02_西研所软件训练营\release_2\07.实战课程-西研\实战课程_C语言版\03_演练和实战工程\project\subwayCharge_student\LLT\subwayCharge.lib and object D:\01_work\2016Q34\02_西研所软件训练营\release_2\07.实战课程-西研\实战课程_C语言版\03_演练和实战工程\project\subwayCharge_student\LLT\subwayCharge.exp
+  subwayCharge.vcxproj -> D:\01_work\2016Q34\02_西研所软件训练营\release_2\07.实战课程-西研\实战课程_C语言版\03_演练和实战工程\project\subwayCharge_student\LLT\subwayCharge.exe

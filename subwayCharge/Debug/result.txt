@@ -1,0 +1,38 @@
+
+-----------------------------------------------------------------
+IncrediBuild Console 3.61.1 (build 1243)
+Copyright (C) 2001-2011 Xoreax Software Ltd. All rights reserved.
+-----------------------------------------------------------------
+
+
+--------------------Build System Warning---------------------------------------
+Failed to connect to Coordinator:
+    All builds will run in standalone mode.
+
+-------------------------------------------------------------------------------
+Initializing...
+Setting environment for using Microsoft Visual Studio 2010 x86 tools.
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. All rights reserved.
+1>------ Build started: Project: subwayCharge, Configuration: LLT Win32 ------
+1>Build started 2016/9/13 12:13:08.
+1>InitializeBuildStatus:
+1>  Creating "LLT\subwayCharge.unsuccessfulbuild" because "AlwaysCreate" was specified.
+1>ClCompile:
+1>  All outputs are up-to-date.
+1>Link:
+1>  All outputs are up-to-date.
+1>  subwayCharge.vcxproj -> D:\07_other\07_Test\subwayCharge_base\LLT\subwayCharge.exe
+1>FinalizeBuildStatus:
+1>  Deleting file "LLT\subwayCharge.unsuccessfulbuild".
+1>  Touching "LLT\subwayCharge.lastbuildstate".
+1>
+1>Build succeeded.
+1>
+1>Time Elapsed 00:00:00.52
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+ 
+1 build system warning(s):
+   - Failed to connect to Coordinator
+ 

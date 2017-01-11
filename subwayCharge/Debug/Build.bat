@@ -1,0 +1,1 @@
+BuildConsole.exe "D:\07_other\07_Test\subwayCharge_base\subwayCharge.sln" /UseIDEMonitor /build /PRJ="subwayCharge" /cfg="LLT|Win32"  > "D:\07_other\07_Test\subwayCharge_base\subwayCharge\Debug\result.txt
