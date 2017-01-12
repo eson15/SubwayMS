@@ -147,6 +147,7 @@ EN_RETURN_CODE GetAssignedCardNum(unsigned int &cardNo)
 	{
 		cardNo = cardNumQueue.front();
 		cardNumQueue.pop();
+		cardCount++;             //×Ü¿¨Êý+1
 		return EN_RETURN_SUCC;
 	}
 }
