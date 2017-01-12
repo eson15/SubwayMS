@@ -21,9 +21,13 @@ using namespace std;
 void ProcQueryLineCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
     //查询所有地铁线 GetLineInfo
-	string output;
-	GetLineInfo(output);
-	int length = output.length();
-	output.copy(returnStr, length, 0);
+	if (unCmd.stCmdQueryLine.cmd[0] == 'L')
+	{
+		string output;
+		GetLineInfo(output);
+		int length = output.length();
+		output.copy(returnStr, length, 0);
+	}
+	
     return;
 }
