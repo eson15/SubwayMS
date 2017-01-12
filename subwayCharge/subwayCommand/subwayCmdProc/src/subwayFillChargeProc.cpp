@@ -19,14 +19,34 @@ using namespace std;
 */
 void ProcFillChargeCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    //获取卡信息 GetCardInfo
+    
+	unsigned int balance = 0;
+	EN_CARD_TYPE enCard = EN_CARD_TYPE_NOMAL;
 
-    //进行充值 RechargeCard
+	//获取卡信息
+	EN_RETURN_CODE returnCode = GetCardInfo(unCmd.stCmdFillCharge.cardNo, balance, enCard);
+	//卡无效判断
+	if (returnCode != EN_RETURN_SUCC)
+	{
+		GetOutputResultStr(EN_CMD_TYPE_FILL_CHARGE, returnCode, unCmd.stCmdFillCharge.cardNo, enCard, balance, returnStr);
+		return;
+	}
+	//卡类型判断
+	if(enCard == EN_CARD_TYPE_SINGLE)
+	{
+		returnCode = EN_RETURN_INPUT_INVALID_CARDTYPE;
+		GetOutputResultStr(EN_CMD_TYPE_FILL_CHARGE, returnCode, unCmd.stCmdFillCharge.cardNo, enCard, balance, returnStr);
+		return;
+	}
+
+    //进行充值，包括充值范围，以及最后的余额范围判断，充值成功则更新卡余额
+	returnCode = RechargeCard(unCmd.stCmdFillCharge.cardNo, unCmd.stCmdFillCharge.cardCharge);
 
     //根据充值后的卡信息  GetCardInfo
-
+	GetCardInfo(unCmd.stCmdFillCharge.cardNo, balance, enCard);
     //输出字符串
     //GetOutputResultStr(EN_CMD_TYPE_FILL_CHARGE, returnCode, pCmdCharge->cardNo, enCard, balance, returnStr);
+	GetOutputResultStr(EN_CMD_TYPE_FILL_CHARGE, returnCode, unCmd.stCmdFillCharge.cardNo, enCard, balance, returnStr);
 
     return;
 }

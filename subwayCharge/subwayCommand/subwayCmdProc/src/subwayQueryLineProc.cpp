@@ -26,5 +26,6 @@ void ProcQueryLineCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 	int length = output.length();
 	int copyLength = MinValue(length, MAX_SEND_BUFFER_LENGTH);//实现string copy的防护，copy长度为缓存长度与string长度的较小值
 	output.copy(returnStr, copyLength, 0);
+
     return;
 }

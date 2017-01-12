@@ -48,10 +48,17 @@ EN_RETURN_CODE AssignCard(unsigned int &cardNo, EN_CARD_TYPE enCard, unsigned in
 */
 EN_RETURN_CODE RechargeCard(unsigned int cardNo, unsigned int recharge)
 {
+	if (recharge > 999 || recharge <= 0)
+		return EN_RETURN_RECHARGE_OVERFLOW;
 
+	unsigned int totalSum = cardInfoArray[cardNo]->getBalance() + recharge;
+
+	if (totalSum > 999 || totalSum <= 0)
+		return EN_RETURN_RECHARGE_OVERFLOW;
+
+	cardInfoArray[cardNo]->setBalance(totalSum);
 	return EN_RETURN_SUCC;
 }
-
 /*
 @ 获取卡余额
 @ 入参：cardNo,卡号;
@@ -72,8 +79,28 @@ EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_T
 	}
 	enCard = cardInfoArray[cardNo]->getType();
 	balance = cardInfoArray[cardNo]->getBalance();
+
 	return EN_RETURN_SUCC;
 }
+
+///*
+//@ 获取卡余额
+//@ 入参：cardNo,卡号;
+//@ 出参: balance: 余额
+//		enCard:  卡类型
+//@ 返回值: EN_RETURN_SUCC，成功; EN_RETURN_INVALID_CARD, 失败;
+//*/
+//EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_TYPE &enCard)
+//{
+//	//替换，张翔
+//	if (cardNo > 99 || cardNo < 0)
+//		return EN_RETURN_INVALID_CARD;
+//	
+//	balance = cardInfoArray[cardNo]->getBalance();
+//	enCard = cardInfoArray[cardNo]->getType();
+//
+//	return EN_RETURN_SUCC;
+//}
 
 /*
 @ 卡扣费
