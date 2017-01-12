@@ -43,7 +43,7 @@ struct HISTORY {
 class CARD {
 public:
 	CARD() {}
-	CARD(unsigned int n, EN_CARD_TYPE t, int b = 0) : num(n), type(t), balance(b) {}
+	CARD(unsigned int n, EN_CARD_TYPE t, unsigned int b = 0) : num(n), type(t), balance(b) {}
 	~CARD()
 	{
 		HISTORY *h;
@@ -56,11 +56,11 @@ public:
 	}
 
 
-	void setBalance(int b)
+	void setBalance(unsigned int b)
 	{
 		balance = b;
 	}
-	int getBalance()
+	unsigned int getBalance()
 	{
 		return balance;
 	}
@@ -80,7 +80,7 @@ public:
 private:
 	unsigned int num;
 	EN_CARD_TYPE type;
-	int balance;
+	unsigned int balance;
 	queue<HISTORY*> q_history;
 
 };
@@ -150,6 +150,18 @@ char* GetCardTypeStr(EN_CARD_TYPE enCard);
 
 void InitCardQueue(queue<unsigned int> &cardNumQueue);
 
-EN_RETURN_CODE GetAssignedCardNum(unsigned int &cardNo);
+void GetAssignedCardNum(unsigned int &cardNo);
+
+bool CheckChargeValue(int chargeValue);
+
+EN_RETURN_CODE CheckAvailCard();
+
+EN_RETURN_CODE CheckTime(ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime);
+
+unsigned int CalDurationTime(ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime);
+
+
+
+
 
 #endif

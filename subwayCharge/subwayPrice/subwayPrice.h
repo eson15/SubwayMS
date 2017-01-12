@@ -16,4 +16,7 @@ int GetBasePrice(unsigned int meters);
 */
 EN_RETURN_CODE GetDeductPrice(EN_CARD_TYPE enCardType, unsigned int balance, unsigned int meters, ST_SUBWAY_TIME &enterTime, ST_SUBWAY_TIME &exitTime, unsigned int &deductPrice);
 
+unsigned int ChargeByTime(int minutes, EN_CARD_TYPE enCard);
+
+unsigned int ChargeByDistance(unsigned int distance, EN_CARD_TYPE enCard, ST_SUBWAY_TIME enterTime, unsigned int balance);
 #endif
