@@ -59,11 +59,16 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 
 	//对乘车卡进行扣费 DeductCard
 	returnCode = DeductCard(unCmd.stCmdDeduct.cardNo, cardType, cost, balance);
-	if (returnCode != EN_RETURN_SUCC)
+	if ((returnCode != EN_RETURN_SUCC)&&(returnCode != EN_RETURN_BALANCE_TOO_LOW))
 	{
 		GetOutputResultStr(EN_CMD_TYPE_DEDUCT, returnCode, unCmd.stCmdDeduct.cardNo, cardType, balance, returnStr);
 		return;
 	}
+	if (EN_CARD_TYPE_SINGLE == cardType)
+	{
+		DeleteCard(unCmd.stCmdDeduct.cardNo);
+	}
+	
 
 	
 

@@ -45,7 +45,7 @@ void ProcCreateCardCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]) //
 
 	if (!CheckChargeValue(unCmd.stCmdCreateCard.cardCharge))
 	{
-		returnCode = EN_RETURN_INNER_ERR;
+		returnCode = EN_RETURN_RECHARGE_OVERFLOW;
 		GetOutputResultStr(EN_CMD_TYPE_CREATE_CARD, returnCode, cardNo, cardType, unCmd.stCmdCreateCard.cardCharge, returnStr);
 		return;
 	}

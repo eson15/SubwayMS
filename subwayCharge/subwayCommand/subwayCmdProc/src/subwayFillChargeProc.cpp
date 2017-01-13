@@ -21,7 +21,7 @@ void ProcFillChargeCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
 
 	unsigned int balance = 0;
-	EN_CARD_TYPE enCard = EN_CARD_TYPE_NOMAL;
+	EN_CARD_TYPE enCard = EN_CARD_TYPE_BUTT;
 
 	//获取卡信息
 	EN_RETURN_CODE returnCode = GetCardInfo(unCmd.stCmdFillCharge.cardNo, balance, enCard);

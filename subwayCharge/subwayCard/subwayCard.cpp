@@ -19,7 +19,7 @@ queue<unsigned int> cardNumQueue;
 */
 void InitCardManagerInfo()
 {
-	InitCardQueue(cardNumQueue);
+	InitCardQueue();
 }
 
 /*
@@ -117,7 +117,7 @@ EN_RETURN_CODE DeductCard(unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int
 	balance = balance - deductPrice;
 	cardInfoArray[cardNo]->setBalance(balance);
 
-	if (balance <= 20)
+	if (balance <= 20&&enCard!=EN_CARD_TYPE_SINGLE)
 	{
 		return EN_RETURN_BALANCE_TOO_LOW;
 	}
@@ -140,6 +140,7 @@ int DeleteCard(unsigned int cardNo)
 	}
 	delete cardInfoArray[cardNo];
 	cardInfoArray[cardNo] = nullptr;
+	cardCount--;
 
 	cardNumQueue.push(cardNo);
 	return 0;
@@ -189,16 +190,16 @@ EN_RETURN_CODE GetCardType(char cardType[], EN_CARD_TYPE &enCard)
 	return EN_RETURN_SUCC;
 }
 
-void InitCardQueue(queue<unsigned int> &cardNumQueueTmp)
+void InitCardQueue()
 {
 	int index;
-	while (!cardNumQueueTmp.empty())
+	while (!cardNumQueue.empty())
 	{
-		cardNumQueueTmp.pop();
+		cardNumQueue.pop();
 	}
 	for (index = 0; index < CARDNUM; ++index)
 	{
-		cardNumQueueTmp.push(index);
+		cardNumQueue.push(index);
 	}
 }
 
@@ -249,7 +250,7 @@ EN_RETURN_CODE CheckTime(ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime)
 	{
 		return EN_RETURN_INVALID_TIME;
 	}
-	else if ((enterHour * 60 + enterMinutes) >= (exitHour * 60 + exitMinutes))
+	else if ((enterHour * 60 + enterMinutes) > (exitHour * 60 + exitMinutes))
 	{
 		return EN_RETURN_INVALID_TIME;
 	}

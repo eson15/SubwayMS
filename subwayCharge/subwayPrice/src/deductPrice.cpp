@@ -20,7 +20,7 @@ EN_RETURN_CODE GetDeductPrice(EN_CARD_TYPE enCardType, unsigned int balance, uns
 	{
 		//计算乘车时长  DIFF_TIME
 		durationTime = CalDurationTime(enterTime, exitTime);
-		deductPrice = ChargeByTime(durationTime,enCardType);
+		deductPrice = MaxValue(ChargeByTime(durationTime,enCardType),balance);
 	}
 	else
 	{
@@ -75,7 +75,7 @@ unsigned int ChargeByDistance(unsigned int distance, EN_CARD_TYPE enCard, ST_SUB
 	case EN_CARD_TYPE_ELDER:
 	{
 		unsigned int currentTime = enterTime.hour * 60 + enterTime.minutes;
-		if ((currentTime >= 600) && (currentTime <= 900))
+		if ((currentTime >= 600) && (currentTime < 900))
 		{
 			cost = cost * 4 / 5;
 		}

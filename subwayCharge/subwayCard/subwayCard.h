@@ -163,7 +163,7 @@ int DeleteCard(unsigned int cardNo);
 */
 char* GetCardTypeStr(EN_CARD_TYPE enCard);
 
-void InitCardQueue(queue<unsigned int> &cardNumQueueTmp);
+void InitCardQueue();
 
 void GetAssignedCardNum(unsigned int &cardNo);
 
