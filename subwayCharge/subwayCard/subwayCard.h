@@ -19,14 +19,14 @@ using namespace std;
 //地铁卡类型
 typedef enum
 {
-    EN_CARD_TYPE_SINGLE = 0,
-    EN_CARD_TYPE_ELDER,
-    EN_CARD_TYPE_NOMAL,
-    EN_CARD_TYPE_BUTT
+	EN_CARD_TYPE_SINGLE = 0,
+	EN_CARD_TYPE_ELDER,
+	EN_CARD_TYPE_NOMAL,
+	EN_CARD_TYPE_BUTT
 }EN_CARD_TYPE;
 
 
- 
+
 struct HISTORY {
 	ST_SUBWAY_TIME inTime;
 	ST_SUBWAY_TIME outTime;
@@ -34,25 +34,40 @@ struct HISTORY {
 	string outStation;
 	int pay;
 
+	HISTORY();
 	HISTORY(ST_SUBWAY_TIME inT, ST_SUBWAY_TIME outT, string inS, string outS, int p) :
 		inTime(inT), outTime(outT), inStation(inS), outStation(outS), pay(p) {}
+
 };
 
 
 
 class CARD {
 public:
-	CARD() {}
+	CARD() :num(0), type(EN_CARD_TYPE_BUTT), balance(0) {}
+
 	CARD(unsigned int n, EN_CARD_TYPE t, unsigned int b = 0) : num(n), type(t), balance(b) {}
 	~CARD()
 	{
+		
 		HISTORY *h;
-		while (!q_history.empty())
-		{
-			h = q_history.front();
-			q_history.pop();
-			delete h;
-		}
+		/*try
+		{*/
+			while (!q_history.empty())
+			{
+				h = q_history.front();
+				q_history.pop();
+				if (NULL != h)
+				{
+					delete h;
+					h = nullptr;
+				}
+			}
+		//}
+		//catch (const exception& e)
+		//{
+		//	//cerr << "Exception: " << e.what() << endl;
+		//}
 	}
 
 
@@ -109,9 +124,9 @@ EN_RETURN_CODE RechargeCard(unsigned int cardNo, unsigned int recharge);
 
 /*
 @ 获取卡信息
-@ 入参：cardNo,卡号; 
+@ 入参：cardNo,卡号;
 @ 出参: balance: 余额
-        enCard:  卡类型
+		enCard:  卡类型
 @ 返回值: EN_RETURN_SUCC，成功; EN_RETURN_INVALID_CARD, 失败;
 */
 EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_TYPE &enCard);
@@ -126,7 +141,7 @@ EN_RETURN_CODE DeductCard(unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int
 
 /*
 @ 根据卡类型字符串, 识别卡类型
-@ 入参：cardType,      卡类型字符串; 
+@ 入参：cardType,      卡类型字符串;
 @ 出参: enCard,        卡类型
 @ 返回值: EN_RETURN_SUCC，成功; EN_RETURN_INPUT_INVALID_CARDTYPE, 失败;
 */
@@ -134,7 +149,7 @@ EN_RETURN_CODE GetCardType(char cardType[], EN_CARD_TYPE &enCard);
 
 /*
 @ 删除卡信息
-@ 入参：cardNo,卡号; 
+@ 入参：cardNo,卡号;
 @ 出参: 无
 @ 返回值: 0，成功; -1, 失败;
 */
@@ -142,13 +157,13 @@ int DeleteCard(unsigned int cardNo);
 
 /*
 @ 获取卡类型字符串
-@ 入参：enCard,卡类型; 
+@ 入参：enCard,卡类型;
 @ 出参: 无
 @ 返回值: 卡类型字符串，比如"普通卡";
 */
 char* GetCardTypeStr(EN_CARD_TYPE enCard);
 
-void InitCardQueue(queue<unsigned int> &cardNumQueue);
+void InitCardQueue(queue<unsigned int> &cardNumQueueTmp);
 
 void GetAssignedCardNum(unsigned int &cardNo);
 
@@ -160,7 +175,7 @@ EN_RETURN_CODE CheckTime(ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime);
 
 unsigned int CalDurationTime(ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime);
 
-
+EN_RETURN_CODE DeleteAllCardInfo();
 
 
 

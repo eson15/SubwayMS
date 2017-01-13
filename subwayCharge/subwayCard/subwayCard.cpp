@@ -37,7 +37,7 @@ EN_RETURN_CODE AssignCard(unsigned int &cardNo, EN_CARD_TYPE enCard, unsigned in
 	CARD *card = new CARD(cardNo, enCard, charge);
 	cardInfoArray[cardNo] = card;//关联哈希表与新申请的卡对象
 
-	return EN_RETURN_SUCC;
+	return returnCode;
 }
 
 /*
@@ -68,7 +68,7 @@ EN_RETURN_CODE RechargeCard(unsigned int cardNo, unsigned int recharge)
 */
 EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_TYPE &enCard)
 {
-	EN_RETURN_CODE returnCode = EN_RETURN_SUCC;
+	//EN_RETURN_CODE returnCode = EN_RETURN_SUCC;
 	if (cardNo > 99)
 	{
 		return EN_RETURN_INVALID_CARD;
@@ -134,6 +134,14 @@ EN_RETURN_CODE DeductCard(unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int
 int DeleteCard(unsigned int cardNo)
 {
 
+	if (cardNo < 0 || cardNo > 99)
+	{
+		return -1;
+	}
+	delete cardInfoArray[cardNo];
+	cardInfoArray[cardNo] = nullptr;
+
+	cardNumQueue.push(cardNo);
 	return 0;
 }
 
@@ -149,16 +157,12 @@ char* GetCardTypeStr(EN_CARD_TYPE enCard)
 	{
 	case   EN_CARD_TYPE_SINGLE:
 		return "单程卡";
-		break;
 	case   EN_CARD_TYPE_ELDER:
 		return "老年卡";
-		break;
 	case   EN_CARD_TYPE_NOMAL:
 		return "普通卡";
-		break;
 	default:
 		return "无效卡类型";
-		break;
 	}
 
 }
@@ -185,24 +189,28 @@ EN_RETURN_CODE GetCardType(char cardType[], EN_CARD_TYPE &enCard)
 	return EN_RETURN_SUCC;
 }
 
-void InitCardQueue(queue<unsigned int> &cardNumQueue)
+void InitCardQueue(queue<unsigned int> &cardNumQueueTmp)
 {
-	int index = 0;
-	for (; index < CARDNUM; ++index)
+	int index;
+	while (!cardNumQueueTmp.empty())
 	{
-		cardNumQueue.push(index);
+		cardNumQueueTmp.pop();
+	}
+	for (index = 0; index < CARDNUM; ++index)
+	{
+		cardNumQueueTmp.push(index);
 	}
 }
 
 void GetAssignedCardNum(unsigned int &cardNo)
 {
 	//卡队列非空，才进行卡号分配
+	//本函数内不对系统内的卡总数进行校验，校验在上层通过调用CheckAvailCard()实现；
 	cardNo = cardNumQueue.front();
 	cardNumQueue.pop();
 	cardCount++;             //总已用卡数+1
-	return;
 
-	//本函数内不对系统内的卡总数进行校验，校验在上层通过调用CheckAvailCard()实现；
+	return;
 }
 
 
@@ -257,4 +265,35 @@ unsigned int CalDurationTime(ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime)
 	int exitMinutes = exitTime.minutes;
 	unsigned int durationTime = (exitHour * 60 + exitMinutes) - (enterHour * 60 + enterMinutes);
 	return durationTime;
+}
+
+
+/*
+@ 清空当前所有卡信息
+@ 入参：无;
+@ 出参: 无
+@ 返回值:无;
+*/
+EN_RETURN_CODE DeleteAllCardInfo()
+{
+	EN_RETURN_CODE returnCode = EN_RETURN_SUCC;
+
+	int index = 0;
+	for (; index < 100; index++)
+	{
+		if (cardInfoArray[index] != nullptr)
+		{
+			if (0 == DeleteCard(index))
+			{
+				continue;
+			}
+			else
+			{
+				returnCode = EN_RETURN_INNER_ERR;
+				break;
+			}
+
+		}
+	}
+	return returnCode;
 }

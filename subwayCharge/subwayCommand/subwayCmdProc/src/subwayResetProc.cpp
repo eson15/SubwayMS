@@ -19,8 +19,11 @@ using namespace std;
 */
 void ProcResetCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
+	EN_RETURN_CODE returnCode = EN_RETURN_SUCC;
+	DeleteAllCardInfo();
+
     InitCardManagerInfo();
     //Êä³ö×Ö·û´®
-    GetOutputResultStr(EN_CMD_TYPE_RESET, EN_RETURN_SUCC, 0, EN_CARD_TYPE_BUTT, 0, returnStr);
+    GetOutputResultStr(EN_CMD_TYPE_RESET, returnCode, 0, EN_CARD_TYPE_BUTT, 0, returnStr);
     return;
 }
